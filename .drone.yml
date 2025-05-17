@@ -1,0 +1,11 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: meteo
+    image: alpine:latest
+    commands:
+      - apk add --no-cache curl bash
+      - chmod +x ./meteo.sh
+      - ./meteo.sh
